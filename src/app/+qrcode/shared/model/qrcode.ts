@@ -12,6 +12,7 @@ export interface IQrCode {
     type: string;
     img: string;
     mode: 'static' | 'dynamic';
+    path_img: string;
 }
 
 export class QrCode {
@@ -23,15 +24,16 @@ export class QrCode {
     img = this._q.img;
     mode = this._q.mode;
     type = this._q.type;
+    path_img= this._q.path_img;
 }
 
-export interface Data {
-    qr_data: DataQr[];
-}
+// export interface Data {
+//     qr_data: DataQr[];
+// }
 
-interface DataQr {
-    url: string;
-}
-interface UrlData {
-    url: string;
-}
+// interface DataQr {
+//     url: string;
+// }
+// interface UrlData {
+//     url: string;
+// }

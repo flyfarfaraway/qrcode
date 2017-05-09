@@ -32,7 +32,8 @@ export class QrcodeComponent implements OnInit {
     console.log(data);
 
     this.qcodeService.Create(data).subscribe(q => {
-      this.link = this.qcodeService.MakeImageLink(q.id);
+      this.link = this.qcodeService.MakeImageLink(q.id, q.path_img);
+console.log(this.link);
     }, (e: HttpError) => {
       this.message = `Error: ${e.Message()}`;
     });
