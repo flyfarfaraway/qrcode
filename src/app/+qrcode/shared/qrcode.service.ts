@@ -15,9 +15,9 @@ export class QrcodeService {
    */
 
   Create(data: IQrCodeData) {
-    return this.api.Post<IQrCode>("qrcode-api/create", {}, {
-      data: data
-    }).map(q => new QrCode(q));
+    return this.api.Post<IQrCode>("qrcode-api/create", {}, 
+      data
+    ).map(q => new QrCode(q));
   }
 
   /**

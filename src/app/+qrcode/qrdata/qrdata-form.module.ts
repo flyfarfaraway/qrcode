@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
-import { TextFormModule } from './text/text.module';
+
 import { CommonModule } from '@angular/common';
-import { UrlFormModule } from './url/url.module';
+
+import { GenericFormModule } from './generic/generic.module';
 
 @NgModule({
     imports: [
-        CommonModule
+        CommonModule, GenericFormModule
     ],
-    exports: [TextFormModule,UrlFormModule],
+    exports: [ GenericFormModule],
 })
 export class QrDataFormModule { }

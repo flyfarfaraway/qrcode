@@ -8,8 +8,10 @@
         <option value="text">Text</option>
         <option value="urls">URL</option>
     </select>
+
     <generic-form [type]="form.value.type" formControlName="data"></generic-form>
     <!--<url-form formControlName="url"></url-form>-->
+
 </form>
 
 <button (click)="Create()">submit</button>

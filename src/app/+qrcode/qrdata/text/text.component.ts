@@ -1,6 +1,6 @@
 import { Component, Input, forwardRef, ExistingProvider } from '@angular/core';
 
-import { FormsModule, ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { FormsModule, ControlValueAccessor, NG_VALUE_ACCESSOR, FormGroup } from '@angular/forms';
 
 import { AbstractControl } from '@angular/forms';
 
@@ -13,20 +13,25 @@ const ARRAY_FORM_CONTROL_VALUE_ACCESSOR: ExistingProvider = {
 
 import { FormArray, FormControl } from '@angular/forms';
 
+interface IText {
+    content: string;
+
+}
+
 @Component({
     selector: 'text-form',
-    template: `
-    <input type="text" [ngModel]="content" (ngModelChange)="onChange($event)" />
-    `,
+    templateUrl: 'text.component.html',
     providers: [ARRAY_FORM_CONTROL_VALUE_ACCESSOR]
 })
 export class TextFormComponent implements ControlValueAccessor {
-    protected content = '';
+    protected text: IText = { content: '' };
     protected onChangeCallback = (v) => { };
+    content = new FormGroup({
 
+    });
     // set value
-    writeValue(content: string) {
-        this.content = content;
+    writeValue(text?: IText) {
+        this.text = text || {content:''};
     }
 
     registerOnChange(fn: any) {
@@ -38,12 +43,12 @@ export class TextFormComponent implements ControlValueAccessor {
     }
 
     // on edit
-    onChange(content: string) {
-        this.content = content;
-        this.onChangeCallback(this.content);
+    onContentChange(content: string) {
+        this.text.content = content;
+        this.onChangeCallback(this.text);
     }
 
-    
+
 
 }
 

@@ -1,8 +1,7 @@
 <div> Generic Editor </div>
-<div *ngIf="record">
-    <div [ngSwitch]="record.type">
-        <div *ngSwitchCase="'text'">
-            <text-form [(ngModel)]="record.data"></text-form>
-        </div>
+
+<div [ngSwitch]="type">
+    <div *ngSwitchCase="'text'">
+        <text-form [(ngModel)]="data" (ngModelChange)="onChange($event)"></text-form>
     </div>
 </div>
