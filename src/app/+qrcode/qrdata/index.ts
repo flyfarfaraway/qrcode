@@ -1,0 +1,1 @@
+export { QrDataFormModule } from './qrdata-form.module';

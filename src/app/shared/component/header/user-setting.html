@@ -1,0 +1,14 @@
+<div>
+    <div>
+        <span class="user-head-text" i18n>User Setting</span>
+        <hr class="user-hr-css">
+    </div>
+    <div>
+        <span class="user-text-language" i18n>Language</span>
+        <select class="hl-user-select" [ngModel]="locale" (ngModelChange)="SetLocale($event)">
+            <option *ngFor="let item of items" [value]="item.key">{{ item.value }}</option>
+        </select>
+        <br>
+        <button class="hl-button-user btn-footer-user" (click)="Close()"> <span i18n>Close</span> </button>
+    </div>
+</div>

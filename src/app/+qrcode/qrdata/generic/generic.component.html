@@ -1,0 +1,8 @@
+<div> Generic Editor </div>
+<div *ngIf="record">
+    <div [ngSwitch]="record.type">
+        <div *ngSwitchCase="'text'">
+            <text-form [(ngModel)]="record.data"></text-form>
+        </div>
+    </div>
+</div>

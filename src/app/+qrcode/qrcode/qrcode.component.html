@@ -1,0 +1,15 @@
+<form [formGroup]="form">
+    <input formControlName="name" placeholder="Name">
+    <select formControlName="mode">
+        <option value="static">Static</option>
+        <option value="dynamic">Dynamic</option>
+    </select>
+    <select formControlName="type">
+        <option value="text">Text</option>
+        <option value="urls">URL</option>
+    </select>
+    <generic-form [type]="form.value.type" formControlName="data"></generic-form>
+    <!--<url-form formControlName="url"></url-form>-->
+</form>
+
+<button (click)="Create()">submit</button>

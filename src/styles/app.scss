@@ -1,0 +1,22 @@
+// @import 'design/palette';
+@import 'design/main';
+@import 'element/main';
+
+
+@import 'dialog';
+@import 'icon';
+@import 'toastr';
+@import 'table';
+@import 'shared/main';
+@font-face {
+    font-family: 'Roboto';
+    src: url("./assets/font/Roboto/Roboto-Light.ttf");
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0px;
+    color: $text-color;
+    font-size: $font-size-default;
+    background-color: $background-color;
+}

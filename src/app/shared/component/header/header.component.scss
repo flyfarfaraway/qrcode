@@ -1,0 +1,54 @@
+
+.qr_header{
+    background-color: white;
+
+}
+.navbar-default,.navbar-header {
+    background-color:white !important;
+    border-color:white !important;
+    border-bottom: 2px solid #cccccc;
+    height: 80px;
+    z-index: 1;
+}
+@media (min-width: 768px){
+    .navbar-nav>li>a {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    .display-form{
+        padding: 0 120px 0 120px;
+    }
+    .navbar-brand{
+        padding-right: 120px;
+    }
+    
+}
+.navbar{
+    margin-bottom: 0px;
+    border: none;
+}
+
+
+.navbar-nav{
+    background-color: white;
+}
+.avatar{
+    width: 50px;
+    border-radius: 50px;
+    background: gray;
+    height: 50px;
+    margin-top:15px;
+    margin-bottom: 15px;
+    display: absolute;
+}
+.caret{
+    color: #0099cc;
+    display: inline-block;
+    width: 0;
+    height: 0px;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-top: 6px dashed;
+    border-right: 6px solid transparent;
+    border-left: 6px solid transparent;
+}

@@ -1,0 +1,128 @@
+<app-header></app-header>
+<!--<div fxLayout="row">
+    <div fxFlex="60%" fxLayout="column">
+        <textarea placeholder="Enter text" #data></textarea>
+        <hr>
+        <button (click)="Generate(data.value)">
+          Tạo QR Code
+        </button>
+    </div>
+    <div fxFlex="40%">
+        <div class="message">{{message}}</div>
+        <img [src]="link">
+    </div>
+</div>-->
+<section class="header2">
+    <div class="container">
+        <p>Để sử dụng QR Code hiệu quả nhất, tìm hiểu thêm về QR Code tại:</p>
+
+        <ol class="breadcrumb">
+            <li><a href="#">Thư viện QR Code</a></li>
+            <li><a href="#">Library</a></li>
+            <li class="active">Data</li>
+        </ol>
+    </div>
+
+
+</section>
+<section class="pick-option">
+    <div class="container">
+        <h3>TẠO QR CODE</h3>
+        <div class="kind">
+            <p>Chọn loại QR Code:</p>
+            <ol class="breadcrumb">
+                <li><a href="#">Thông dụng</a></li>
+                <li><a href="#">Library</a></li>
+                <li class="active">Data</li>
+            </ol>
+        </div>
+        <div class="dp-body">
+            <div class="">
+                <div>
+                    <table class="table table-bordered">
+                        <!-- On cells (`td` or `th`) -->
+                        <tr class="qr-table">
+                            <td class=""><button class="btn btn-default btn-group  qr-option" [ngClass]="{active: tabIndex == 1}" (click)="changeTab(1)">Web Link</button></td>
+                            <td class=""><button class="btn btn-default btn-group  qr-option" [ngClass]="{active: tabIndex == 2}" (click)="changeTab(2)">Text</button></td>
+                            <td class=""><button class="btn btn-default btn-group  qr-option" [ngClass]="{active: tabIndex == 3}" (click)="changeTab(3)">Name Card</button></td>
+                            <td class=""><button class="btn btn-default btn-group  qr-option" [ngClass]="{active: tabIndex == 4}" (click)="changeTab(4)">Name Card</button></td>
+                            <td class=""><button class="btn btn-default btn-group  qr-option" [ngClass]="{active: tabIndex == 5}" (click)="changeTab(5)">Name Card</button></td>
+                            <td class=""><button class="btn btn-default btn-group  qr-option" [ngClass]="{active: tabIndex == 6}" (click)="changeTab(6)">Name Card</button></td>
+                        </tr>
+                        <tr class="qr-table">
+                            <td class=""><button class="btn btn-default btn-group  qr-option" [ngClass]="{active: tabIndex == 7}" (click)="changeTab(7)">Web Link</button></td>
+                            <td class=""><button class="btn btn-default btn-group  qr-option" [ngClass]="{active: tabIndex == 8}" (click)="changeTab(8)">Text</button></td>
+                            <td class=""><button class="btn btn-default btn-group  qr-option" [ngClass]="{active: tabIndex == 9}" (click)="changeTab(9)">Name Card</button></td>
+                            <td class=""><button class="btn btn-default btn-group  qr-option" [ngClass]="{active: tabIndex == 10}" (click)="changeTab(10)">Name Card</button></td>
+                            <td class=""><button class="btn btn-default btn-group  qr-option" [ngClass]="{active: tabIndex == 11}" (click)="changeTab(11)">Name Card</button></td>
+                            <td class=""><button class="btn btn-default btn-group  qr-option" [ngClass]="{active: tabIndex == 12}" (click)="changeTab(12)">Name Card</button></td>
+                        </tr>
+                    </table>
+
+                    <div class="page" aria-label="Page navigation">
+                        <ol class="breadcrumb">
+                            <li><a href="#">First</a></li>
+                            <li><a href="#">Previous</a></li>
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li class="active">3</li>
+                            <li><a href="#">Next</a></li>
+                            <li><a href="#">Last</a></li>
+                        </ol>
+                    </div>
+
+
+                </div>
+                <section class="display">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-8 display-form" id="display-form">
+                                <div [ngSwitch]="tabIndex">
+                                    <ng-template [ngSwitchCase]=1>
+                                        <div class="animated fadeInLeft">
+                                            <h3>URL QR CODE</h3>
+                                            <div>
+                                                <p>Khi người khác quét URL QR Code,thiết bị của họ sẽ tự động kết nối tới đường link URL</p>
+                                                <!--<text-form [formControl]=""></text-form>-->
+                                                <form [formGroup]="form">
+                                                    <input formControlName="name">
+                                                    <input formControlName="type">
+                                                    <div formGroupName="dataContent">
+                                                        <div formGroupName="url">
+                                                            <div formGroupName="content">
+                                                                <text-form formControlName="url"></text-form>
+                                                                <!--<url-form formControlName="url"></url-form>-->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+
+                                                <button (click)="Create()">submit</button>
+                                            </div>
+                                        </div>
+                                    </ng-template>
+                                    <ng-template [ngSwitchCase]="2">
+                                        <div class="animated fadeIn">
+                                            <h3>TEXT QR CODE</h3>
+                                            <p>Khi có người quét Text QR Code,họ sẽ xem được nội dung text mà bạn đã tạo</p>
+                                            <div class="container">
+
+                                                ............
+                                            </div>
+
+                                        </div>
+                                    </ng-template>
+                                    <ng-template [ngSwitchCase]="3">...</ng-template>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 display-qrcode">
+                            <img src="./img/iphone.png">
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</section>

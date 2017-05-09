@@ -1,0 +1,1 @@
+export { HttpServiceGenerator } from '../../../shared';

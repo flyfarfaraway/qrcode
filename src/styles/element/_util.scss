@@ -1,0 +1,35 @@
+.hide,
+.hidden {
+    display: none;
+}
+
+.inline {
+    display: inline-block;
+}
+
+.pointer {
+    cursor: pointer;
+    &:hover {
+        color: green;
+    }
+}
+
+.btpointer {
+    cursor: pointer;
+}
+
+.center {
+    text-align: center;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+[height100] {
+    height: 100%;
+}
