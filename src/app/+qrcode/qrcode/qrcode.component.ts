@@ -5,7 +5,7 @@ import { IQrCode } from '../shared/model/';
 
 @Component({
   selector: 'app-qrcode',
-  templateUrl: './qrcode.component.html',
+  templateUrl: './qrcode.web.html',
   styleUrls: ['./qrcode.component.scss'],
   encapsulation: ViewEncapsulation.Emulated
 })
@@ -41,6 +41,7 @@ console.log(this.link);
   // get url(): any { return this.form.get('url'); }
 
   tabIndex: number = 1;
+  type: string;
   link = "";
   message = "no error";
 
@@ -56,8 +57,9 @@ console.log(this.link);
 
   form = this.makeForm();
 
-  changeTab(tabIndex) {
+  changeTab(tabIndex,type: string) {
     this.tabIndex = tabIndex;
+    this.type = type;
   }
 
   Submit() {

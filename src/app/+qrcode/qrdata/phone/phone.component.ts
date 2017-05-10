@@ -7,31 +7,31 @@ import { AbstractControl } from '@angular/forms';
 
 const ARRAY_FORM_CONTROL_VALUE_ACCESSOR: ExistingProvider = {
     provide: NG_VALUE_ACCESSOR,
-    useExisting: forwardRef(() => UrlFormComponent),
+    useExisting: forwardRef(() => PhoneFormComponent),
     multi: true
 }
 
 import { FormArray, FormControl } from '@angular/forms';
 
-interface IUrl {
-    url: string;
+interface IPhone {
+    content: string;
 
 }
 
 @Component({
-    selector: 'url-form',
-    templateUrl: 'url.component.html',
+    selector: 'phone-form',
+    templateUrl: 'phone.component.html',
     providers: [ARRAY_FORM_CONTROL_VALUE_ACCESSOR]
 })
-export class UrlFormComponent implements ControlValueAccessor {
-    protected link: IUrl = { url: '' };
+export class PhoneFormComponent implements ControlValueAccessor {
+    protected phone_number: IPhone = { content: '' };
     protected onChangeCallback = (v) => { };
     content = new FormGroup({
 
     });
     // set value
-    writeValue(url?: IUrl) {
-        this.link = url || {url:''};
+    writeValue(content?: IPhone) {
+        this.phone_number = content || {content:''};
     }
 
     registerOnChange(fn: any) {
@@ -44,8 +44,8 @@ export class UrlFormComponent implements ControlValueAccessor {
 
     // on edit
     onContentChange(content: string) {
-        this.link.url = content;
-        this.onChangeCallback(this.link);
+        this.phone_number.content = content;
+        this.onChangeCallback(this.phone_number);
     }
 
 

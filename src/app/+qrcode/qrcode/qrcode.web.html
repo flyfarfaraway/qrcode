@@ -42,7 +42,7 @@
                     <table class="table table-bordered">
                         <!-- On cells (`td` or `th`) -->
                         <tr class="qr-table">
-                            <td class=""><button class="btn btn-default btn-group  qr-option" [ngClass]="{active: tabIndex == 1}" (click)="changeTab(1)">Web Link</button></td>
+                            <td class=""><button class="btn btn-default btn-group  qr-option" [ngClass]="{active: tabIndex == 1}" (click)="changeTab(1,'text')">Web Link</button></td>
                             <td class=""><button class="btn btn-default btn-group  qr-option" [ngClass]="{active: tabIndex == 2}" (click)="changeTab(2)">Text</button></td>
                             <td class=""><button class="btn btn-default btn-group  qr-option" [ngClass]="{active: tabIndex == 3}" (click)="changeTab(3)">Name Card</button></td>
                             <td class=""><button class="btn btn-default btn-group  qr-option" [ngClass]="{active: tabIndex == 4}" (click)="changeTab(4)">Name Card</button></td>
@@ -79,25 +79,31 @@
                             <div class="col-md-8 display-form" id="display-form">
                                 <div [ngSwitch]="tabIndex">
                                     <ng-template [ngSwitchCase]=1>
-                                        <div class="animated fadeInLeft">
+                                        <div class="animated fadeInUp">
                                             <h3>URL QR CODE</h3>
                                             <div>
                                                 <p>Khi người khác quét URL QR Code,thiết bị của họ sẽ tự động kết nối tới đường link URL</p>
                                                 <!--<text-form [formControl]=""></text-form>-->
                                                 <form [formGroup]="form">
-                                                    <input formControlName="name">
-                                                    <input formControlName="type">
-                                                    <div formGroupName="dataContent">
-                                                        <div formGroupName="url">
-                                                            <div formGroupName="content">
-                                                                <text-form formControlName="url"></text-form>
-                                                                <!--<url-form formControlName="url"></url-form>-->
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                    <input formControlName="name" placeholder="Name">
+                                                    <select formControlName="mode">
+                                                        <option value="static">Static</option>
+                                                        <option value="dynamic">Dynamic</option>
+                                                    </select>
+                                                    <select formControlName="type">
+                                                        <option value="text">Text</option>
+                                                        <option value="url">URL</option>
+                                                        <option value="phone">Phone</option>
+                                                    </select>
+
+                                                    <generic-form [type]="form.value.type" formControlName="data"></generic-form>
+                                                    <!--<url-form formControlName="url"></url-form>-->
+
                                                 </form>
 
                                                 <button (click)="Create()">submit</button>
+
+
                                             </div>
                                         </div>
                                     </ng-template>
@@ -115,11 +121,12 @@
                                     <ng-template [ngSwitchCase]="3">...</ng-template>
                                 </div>
                             </div>
+                            <div class="col-md-4 display-qrcode">
+                                <img src="{{link}}">
+                            </div>
                         </div>
 
-                        <div class="col-md-4 display-qrcode">
-                            <img src="./img/iphone.png">
-                        </div>
+
                     </div>
                 </section>
             </div>

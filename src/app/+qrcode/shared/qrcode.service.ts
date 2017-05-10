@@ -26,8 +26,9 @@ export class QrcodeService {
    */
 
   MakeImageLink(id: string, path_img: string) {
-    console.log(id,path_img);
-    return this.abc.MakeURL(path_img,{id:id});
+    
+    console.log({id:id},path_img);
+    return this.path.MakeURL(path_img,{id:id});
   }
 
   /**
@@ -35,5 +36,5 @@ export class QrcodeService {
    */
 
   private api = this.hsg.make("/api");
-  private abc = this.hsg.make("/static/img");
+  private path = this.hsg.make("/static/img");
 }

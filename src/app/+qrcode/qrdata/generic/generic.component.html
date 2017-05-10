@@ -4,4 +4,12 @@
     <div *ngSwitchCase="'text'">
         <text-form [(ngModel)]="data" (ngModelChange)="onChange($event)"></text-form>
     </div>
+    <div *ngSwitchCase="'url'">
+
+        <url-form [(ngModel)]="data" (ngModelChange)="onChange($event)"></url-form>
+    </div>
+    <div *ngSwitchCase="'phone'">
+
+        <phone-form [(ngModel)]="data" (ngModelChange)="onChange($event)"></phone-form>
+    </div>
 </div>

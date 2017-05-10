@@ -56,6 +56,7 @@ export class HttpApi<T> {
 
     MakeURL(sub: string, q?: any) {
         const request = this.makeRequest(RequestMethod.Get, sub, q);
+        console.log(request);
         return request.url;
     }
 
