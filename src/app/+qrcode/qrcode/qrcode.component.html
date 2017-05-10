@@ -1,43 +1,19 @@
-<section class="pick-option">
-    <div class="dp-body">
-        <table class="table table-bordered">
-            <!-- On cells (`td` or `th`) -->
-            <tr class="qr-table">
-                <td class=""><button class="btn btn-default btn-group  qr-option" [ngClass]="{active: tabIndex == 1}" (click)="changeTab(1,'text')">Web Link</button></td>
-                <td class=""><button class="btn btn-default btn-group  qr-option" [ngClass]="{active: tabIndex == 2}" (click)="changeTab(2)">Text</button></td>
-                <td class=""><button class="btn btn-default btn-group  qr-option" [ngClass]="{active: tabIndex == 3}" (click)="changeTab(3)">Name Card</button></td>
-                <td class=""><button class="btn btn-default btn-group  qr-option" [ngClass]="{active: tabIndex == 4}" (click)="changeTab(4)">Name Card</button></td>
-                <td class=""><button class="btn btn-default btn-group  qr-option" [ngClass]="{active: tabIndex == 5}" (click)="changeTab(5)">Name Card</button></td>
-                <td class=""><button class="btn btn-default btn-group  qr-option" [ngClass]="{active: tabIndex == 6}" (click)="changeTab(6)">Name Card</button></td>
-            </tr>
-            <tr class="qr-table">
-                <td class=""><button class="btn btn-default btn-group  qr-option" [ngClass]="{active: tabIndex == 7}" (click)="changeTab(7)">Web Link</button></td>
-                <td class=""><button class="btn btn-default btn-group  qr-option" [ngClass]="{active: tabIndex == 8}" (click)="changeTab(8)">Text</button></td>
-                <td class=""><button class="btn btn-default btn-group  qr-option" [ngClass]="{active: tabIndex == 9}" (click)="changeTab(9)">Name Card</button></td>
-                <td class=""><button class="btn btn-default btn-group  qr-option" [ngClass]="{active: tabIndex == 10}" (click)="changeTab(10)">Name Card</button></td>
-                <td class=""><button class="btn btn-default btn-group  qr-option" [ngClass]="{active: tabIndex == 11}" (click)="changeTab(11)">Name Card</button></td>
-                <td class=""><button class="btn btn-default btn-group  qr-option" [ngClass]="{active: tabIndex == 12}" (click)="changeTab(12)">Name Card</button></td>
-            </tr>
-        </table>
-        <form [formGroup]="form">
-            <input formControlName="name" placeholder="Name">
-            <select formControlName="mode">
+<form [formGroup]="form">
+    <input formControlName="name" placeholder="Name">
+    <select formControlName="mode">
         <option value="static">Static</option>
         <option value="dynamic">Dynamic</option>
     </select>
-            <select formControlName="type">
-                <!--<button value="text">Text</button>-->
-        <option value="text">Text</option>
+    <select formControlName="type">
+        <button value="text">Text</button>
         <option value="url">URL</option>
         <option value="phone">Phone</option>
     </select>
 
 
-            <generic-form [type]="form.type.value" formControlName="data"></generic-form>
-            <!--<url-form formControlName="url"></url-form>-->
+    <generic-form [type]="form.value.type" formControlName="data"></generic-form>
+    <!--<url-form formControlName="url"></url-form>-->
 
-        </form>
+</form>
 
-        <button (click)="Create()">submit</button>
-    </div>
-</section>
+<button (click)="Create()">submit</button>

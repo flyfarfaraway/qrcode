@@ -5,7 +5,7 @@ import { IQrCode } from '../shared/model/';
 
 @Component({
   selector: 'app-qrcode',
-  templateUrl: './qrcode.web.html',
+  templateUrl: './qrcode.component.html',
   styleUrls: ['./qrcode.component.scss'],
   encapsulation: ViewEncapsulation.Emulated
 })
